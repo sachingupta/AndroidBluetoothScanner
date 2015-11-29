@@ -5,12 +5,13 @@ import android.bluetooth.BluetoothAdapter;
 import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
+import android.support.v4.app.FragmentManager;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.widget.Toast;
 
-public class MainActivity extends AppCompatActivity {
-
+public class MainActivity extends AppCompatActivity implements DeviceListFragment.OnFragmentInteractionListener{
+    private DeviceListFragment deviceListFragment;
     private Context context;
     BluetoothAdapter bluetoothAdapter = null;
     public static int REQUEST_BLUETOOTH_ENABLE = 1;
@@ -29,6 +30,10 @@ public class MainActivity extends AppCompatActivity {
             /* Bluetooth not supported */
             bluetoothNotSupported();
         }
+
+        FragmentManager fragmentManager = getSupportFragmentManager();
+        deviceListFragment = DeviceListFragment.newInstance(bluetoothAdapter);
+        fragmentManager.beginTransaction().replace(R.id.container, deviceListFragment).commit();
     }
 
     private void bluetoothNotSupported() {
@@ -65,5 +70,10 @@ public class MainActivity extends AppCompatActivity {
         String mydeviceName = bluetoothAdapter.getName();
         status = mydeviceName + " : " + mydeviceAddress;
         Toast.makeText(context, status, Toast.LENGTH_LONG).show();
+    }
+
+    @Override
+    public void onFragmentInteraction(String id) {
+
     }
 }
