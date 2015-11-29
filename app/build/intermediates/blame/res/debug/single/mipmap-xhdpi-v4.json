@@ -1,0 +1,10 @@
+[
+    {
+        "merged": "D:\\Sachin_Android\\gitHub\\AndroidBluetoothScanner\\app\\build\\intermediates\\res\\merged\\debug\\mipmap-xhdpi-v4\\ic_launcher.png",
+        "source": "D:\\Sachin_Android\\gitHub\\AndroidBluetoothScanner\\app\\src\\main\\res\\mipmap-xhdpi\\ic_launcher.png"
+    },
+    {
+        "merged": "D:\\Sachin_Android\\bluetooth\\AndroidBluetoothScanner\\app\\build\\intermediates\\res\\merged\\debug\\mipmap-xhdpi-v4\\ic_launcher.png",
+        "source": "D:\\Sachin_Android\\bluetooth\\AndroidBluetoothScanner\\app\\src\\main\\res\\mipmap-xhdpi\\ic_launcher.png"
+    }
+]
